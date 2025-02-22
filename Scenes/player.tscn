@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjsl00ixbafbk"]
+
+[ext_resource type="Texture2D" uid="uid://de7ei6ne8fcia" path="res://Assets/Players/Violet.png" id="1_bvphb"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_apauo"]
+
+[node name="Player" type="Sprite2D"]
+position = Vector2(-1, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_bvphb")
+script = ExtResource("2_apauo")
+min_positions = Vector2(57, 57)
+max_positions = Vector2(1380, 650)
