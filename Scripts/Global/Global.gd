@@ -26,7 +26,7 @@ func load_data() -> void:
   if !FileAccess.file_exists(path):
     return
 
-  var game_data: Dictionary = file.get_var()
+  var game_data: Variant = file.get_var()
   data = game_data['data']
   file.close()
 

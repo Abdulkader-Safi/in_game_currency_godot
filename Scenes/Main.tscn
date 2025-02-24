@@ -40,7 +40,6 @@ text = "Shop"
 [node name="ShopWindow" type="Window" parent="."]
 initial_position = 1
 size = Vector2i(1200, 600)
-visible = false
 script = ExtResource("4_ld387")
 
 [node name="CoinLabel" type="Label" parent="ShopWindow" groups=["BuyButton"]]
