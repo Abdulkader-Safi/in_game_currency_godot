@@ -1,6 +1,5 @@
 extends Window
 
-@export var buy_style: StyleBoxFlat = preload("res://Assets/Resources/buy_button_box_flat.tres")
 @export var bought_style: StyleBoxFlat = preload("res://Assets/Resources/bought_button_box_flat.tres")
 @export var selected_style: StyleBoxFlat = preload("res://Assets/Resources/selected_button_box_flat.tres")
 
@@ -34,6 +33,7 @@ func _on_button_pressed(button: Button, button_index: int):
 
 	elif button.text == "Bought":
 		Global.data['selected_player_index'] = button_index
+		buy_buttons[Global.data['selected_player_index']].set('theme_override_styles/normal', selected_style)
 		get_parent().get_node("Player").update_player_sprite()
 
 	update_button()
@@ -47,10 +47,13 @@ func set_bought_button():
 	for i in range(Global.data['items'].size()):
 		if Global.data['items'].values()[i]:
 			buy_buttons[i].text = "Bought"
+			buy_buttons[i].set('theme_override_styles/normal', bought_style)
 			# buy_buttons[i].disabled = true
 
 func set_selected_player_button():
 	buy_buttons[Global.data['selected_player_index']].text = "Selected"
+	buy_buttons[Global.data['selected_player_index']].set('theme_override_styles/normal', selected_style)
+	get_parent().get_node("Player").update_player_sprite()
 
 func _on_increase_coin_button_pressed():
 	Global.data["coins"] += 100
