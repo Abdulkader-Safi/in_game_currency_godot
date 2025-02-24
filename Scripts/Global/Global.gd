@@ -9,7 +9,7 @@ var data: Dictionary = {
     'violet' = true,
     'yellow' = false,
   },
-  'select_player_index': 2,
+  'selected_player_index': 2,
   "coins": 0
 }
 

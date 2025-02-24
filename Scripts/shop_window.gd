@@ -28,17 +28,24 @@ func _on_button_pressed(button: Button, button_index: int):
 		else:
 			$NotEnoughCoins.show()
 
+	elif button.text == "Bought":
+		Global.data['selected_player_index'] = button_index
+
 	update_button()
 	Global.save_data()
 
 func update_button() -> void:
 	set_bought_button()
+	set_selected_player_button()
 
 func set_bought_button():
 	for i in range(Global.data['items'].size()):
 		if Global.data['items'].values()[i]:
 			buy_buttons[i].text = "Bought"
-			buy_buttons[i].disabled = true
+			# buy_buttons[i].disabled = true
+
+func set_selected_player_button():
+	buy_buttons[Global.data['selected_player_index']].text = "Selected"
 
 func _on_increase_coin_button_pressed():
 	Global.data["coins"] += 100
