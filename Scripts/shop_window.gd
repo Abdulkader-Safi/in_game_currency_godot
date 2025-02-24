@@ -10,9 +10,6 @@ func _ready():
 	connect_signals()
 	update_button()
 
-	for item in Global.data['items']:
-		print(item, Global.data['items'][item])
-
 func connect_signals():
 	buy_buttons = get_tree().get_nodes_in_group("BuyButton")
 	for child in buy_buttons:
@@ -24,7 +21,6 @@ func _on_button_pressed(button: Button, button_index: int):
 		var item_price: int = int(button.text.replace("$", ""))
 
 		if Global.data['coins'] >= item_price:
-			print(Global.data['items'][Global.data['items']])
 			Global.data['items'][Global.data['items'].keys()[button_index]] = true
 			Global.data['coins'] -= item_price
 			Global.data['selected_player_index'] = button_index

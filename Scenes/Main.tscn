@@ -42,7 +42,7 @@ initial_position = 1
 size = Vector2i(1200, 600)
 script = ExtResource("4_ld387")
 
-[node name="CoinLabel" type="Label" parent="ShopWindow" groups=["BuyButton"]]
+[node name="CoinLabel" type="Label" parent="ShopWindow"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
