@@ -1,8 +1,8 @@
 extends Window
 
-@export var buy_style: StyleBoxFlat
-@export var bought_style: StyleBoxFlat
-@export var selected_style: StyleBoxFlat
+@export var buy_style: StyleBoxFlat = preload("res://Assets/Resources/buy_button_box_flat.tres")
+@export var bought_style: StyleBoxFlat = preload("res://Assets/Resources/bought_button_box_flat.tres")
+@export var selected_style: StyleBoxFlat = preload("res://Assets/Resources/selected_button_box_flat.tres")
 
 var buy_buttons: Array[Node]
 
