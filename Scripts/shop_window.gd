@@ -30,6 +30,7 @@ func _on_button_pressed(button: Button, button_index: int):
 
 	elif button.text == "Bought":
 		Global.data['selected_player_index'] = button_index
+		get_parent().get_node("Player").update_player_sprite()
 
 	update_button()
 	Global.save_data()
