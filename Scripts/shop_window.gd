@@ -23,16 +23,16 @@ func _on_button_pressed(button: Button, button_index: int):
 		if Global.data['coins'] >= item_price:
 			Global.data['items'][Global.data['items'].keys()[button_index]] = true
 			Global.data['coins'] -= item_price
+			Global.data['selected_player_index'] = button_index
 			$CoinLabel.text = Global.get_coins_as_text()
 			Global.save_data()
 		else:
 			print("Not enough coins")
 
-func _on_close_requested():
-	hide()
-
-
 func _on_increase_coin_button_pressed():
 	Global.data["coins"] += 100
 	$CoinLabel.text = Global.get_coins_as_text()
 	Global.save_data()
+
+func _on_close_requested():
+	hide()
