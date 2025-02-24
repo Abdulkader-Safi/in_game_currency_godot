@@ -1,5 +1,10 @@
 extends Window
 
+
+@export var buy_style: StyleBoxFlat
+@export var bought_style: StyleBoxFlat
+@export var selected_style: StyleBoxFlat
+
 var buy_buttons: Array[Node]
 
 func _ready():
