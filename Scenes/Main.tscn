@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfh3f77svbaaf"]
+[gd_scene load_steps=11 format=3 uid="uid://dfh3f77svbaaf"]
 
 [ext_resource type="PackedScene" uid="uid://cjsl00ixbafbk" path="res://Scenes/player.tscn" id="1_8in8o"]
 [ext_resource type="Texture2D" uid="uid://de7ei6ne8fcia" path="res://Assets/Players/Violet.png" id="1_sq00x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/shop_window.gd" id="4_ld387"]
 [ext_resource type="Texture2D" uid="uid://caiopiv8r88i5" path="res://Assets/Players/Pink.png" id="5_ff3ab"]
 [ext_resource type="Texture2D" uid="uid://ck2yq7eob6enh" path="res://Assets/Players/Red.png" id="6_7ffnv"]
+[ext_resource type="StyleBox" uid="uid://b6ipr553r8b3v" path="res://Assets/Resources/buy_button_box_flat.tres" id="6_v28vt"]
 [ext_resource type="Texture2D" uid="uid://cnau118fyxwp1" path="res://Assets/Players/Yellow.png" id="8_qni1r"]
 [ext_resource type="Script" path="res://Scripts/not_enough_coins.gd" id="9_gyua0"]
 
@@ -108,6 +109,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("6_v28vt")
 text = "$100"
 
 [node name="Items2" type="VBoxContainer" parent="ShopWindow/GridContainer"]
@@ -127,6 +129,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("6_v28vt")
 text = "$100"
 
 [node name="Items3" type="VBoxContainer" parent="ShopWindow/GridContainer"]
@@ -146,6 +149,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("6_v28vt")
 text = "$100"
 
 [node name="Items4" type="VBoxContainer" parent="ShopWindow/GridContainer"]
@@ -165,6 +169,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("6_v28vt")
 text = "$100"
 
 [node name="NotEnoughCoins" type="ColorRect" parent="ShopWindow"]
