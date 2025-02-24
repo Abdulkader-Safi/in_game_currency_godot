@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfh3f77svbaaf"]
+[gd_scene load_steps=10 format=3 uid="uid://dfh3f77svbaaf"]
 
 [ext_resource type="PackedScene" uid="uid://cjsl00ixbafbk" path="res://Scenes/player.tscn" id="1_8in8o"]
 [ext_resource type="Texture2D" uid="uid://de7ei6ne8fcia" path="res://Assets/Players/Violet.png" id="1_sq00x"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://caiopiv8r88i5" path="res://Assets/Players/Pink.png" id="5_ff3ab"]
 [ext_resource type="Texture2D" uid="uid://ck2yq7eob6enh" path="res://Assets/Players/Red.png" id="6_7ffnv"]
 [ext_resource type="Texture2D" uid="uid://cnau118fyxwp1" path="res://Assets/Players/Yellow.png" id="8_qni1r"]
+[ext_resource type="Script" path="res://Scripts/not_enough_coins.gd" id="9_gyua0"]
 
 [node name="Main" type="Node"]
 
@@ -39,6 +40,7 @@ text = "Shop"
 [node name="ShopWindow" type="Window" parent="."]
 initial_position = 1
 size = Vector2i(1200, 600)
+visible = false
 script = ExtResource("4_ld387")
 
 [node name="CoinLabel" type="Label" parent="ShopWindow" groups=["BuyButton"]]
@@ -166,6 +168,51 @@ theme_override_fonts/font = ExtResource("2_l4nqe")
 theme_override_font_sizes/font_size = 60
 text = "$100"
 
+[node name="NotEnoughCoins" type="ColorRect" parent="ShopWindow"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.960784)
+script = ExtResource("9_gyua0")
+
+[node name="NotEnoghtLabel" type="Label" parent="ShopWindow/NotEnoughCoins"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -55.0
+offset_right = 460.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l4nqe")
+theme_override_font_sizes/font_size = 90
+text = "NOT ENOUGH COINS!"
+
+[node name="CloseButton" type="Button" parent="ShopWindow/NotEnoughCoins"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = 150.0
+offset_right = 62.5
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l4nqe")
+theme_override_font_sizes/font_size = 40
+text = "Close!"
+
 [connection signal="pressed" from="UI/ShopButton" to="UI" method="_on_shop_button_pressed"]
 [connection signal="close_requested" from="ShopWindow" to="ShopWindow" method="_on_close_requested"]
 [connection signal="pressed" from="ShopWindow/IncreaseCoinButton" to="ShopWindow" method="_on_increase_coin_button_pressed"]
+[connection signal="pressed" from="ShopWindow/NotEnoughCoins/CloseButton" to="ShopWindow/NotEnoughCoins" method="_on_close_button_pressed"]

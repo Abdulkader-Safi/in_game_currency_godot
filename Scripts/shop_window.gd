@@ -18,7 +18,6 @@ func connect_signals():
 func _on_button_pressed(button: Button, button_index: int):
 	if button.text.contains("$"):
 		var item_price: int = int(button.text.replace("$", ""))
-		print(item_price)
 
 		if Global.data['coins'] >= item_price:
 			Global.data['items'][Global.data['items'].keys()[button_index]] = true
@@ -27,7 +26,7 @@ func _on_button_pressed(button: Button, button_index: int):
 			$CoinLabel.text = Global.get_coins_as_text()
 			Global.save_data()
 		else:
-			print("Not enough coins")
+			$NotEnoughCoins.show()
 
 func _on_increase_coin_button_pressed():
 	Global.data["coins"] += 100
