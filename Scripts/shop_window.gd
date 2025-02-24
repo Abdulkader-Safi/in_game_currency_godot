@@ -11,5 +11,5 @@ func _on_close_requested():
 
 
 func _on_increase_coin_button_pressed():
-	coins += 100
-	$CoinLabel.text = "$" + str(coins)
+	Global.data["coins"] += 100
+	$CoinLabel.text = Global.get_coins_as_text()

@@ -1,8 +1,15 @@
 extends Node
 
 var data: Dictionary = {
-  'pink' = false,
-  'red' = false,
-  'violet' = true,
-  'yellow' = false,
+  'items': {
+    'pink' = false,
+    'red' = false,
+    'violet' = true,
+    'yellow' = false,
+  },
+  'select_player_index': 2,
+  "coins": 0
 }
+
+func get_coins_as_text():
+  return "$" + str(data['coins'])
