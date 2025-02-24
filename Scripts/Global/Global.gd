@@ -23,9 +23,11 @@ func save_data() -> void:
 
 func load_data() -> void:
   var file: FileAccess = FileAccess.open(path, FileAccess.READ)
-  if FileAccess.file_exists(path):
-    var game_data: Dictionary = file.get_var()
-    data = game_data['data']
+  if !FileAccess.file_exists(path):
+    return
+
+  var game_data: Dictionary = file.get_var()
+  data = game_data['data']
   file.close()
 
 func get_coins_as_text() -> String:

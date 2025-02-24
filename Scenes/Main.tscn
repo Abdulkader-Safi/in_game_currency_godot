@@ -41,7 +41,7 @@ initial_position = 1
 size = Vector2i(1200, 600)
 script = ExtResource("4_ld387")
 
-[node name="CoinLabel" type="Label" parent="ShopWindow"]
+[node name="CoinLabel" type="Label" parent="ShopWindow" groups=["BuyButton"]]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -102,7 +102,7 @@ layout_mode = 2
 texture = ExtResource("5_ff3ab")
 stretch_mode = 3
 
-[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items"]
+[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items" groups=["BuyButton"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
@@ -121,7 +121,7 @@ layout_mode = 2
 texture = ExtResource("6_7ffnv")
 stretch_mode = 3
 
-[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items2"]
+[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items2" groups=["BuyButton"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
@@ -140,7 +140,7 @@ layout_mode = 2
 texture = ExtResource("1_sq00x")
 stretch_mode = 3
 
-[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items3"]
+[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items3" groups=["BuyButton"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
@@ -159,7 +159,7 @@ layout_mode = 2
 texture = ExtResource("8_qni1r")
 stretch_mode = 3
 
-[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items4"]
+[node name="BuyButton" type="Button" parent="ShopWindow/GridContainer/Items4" groups=["BuyButton"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l4nqe")
